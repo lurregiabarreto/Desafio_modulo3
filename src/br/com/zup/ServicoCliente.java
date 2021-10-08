@@ -12,4 +12,40 @@ public class ServicoCliente {
         return cliente;
     }
 
+    //busca do cliente
+    public static Cliente buscarCliente(String cpf) throws Exception {
+        for (Cliente referencia : clientes) {
+            if (referencia.getCpf().equals(cpf)) {
+                return referencia;
+            }
+        }
+        throw new Exception("CPF não encontrado");
+
+    }
+
+    //Verificar  e-mail digitado com @
+    public static String validarEmail(String email) throws Exception {
+        if (email.contains("@")) {
+            return email;
+        }
+        throw new Exception("E-mail invalido");
+    }
+
+    //Verificar CPF já cadastrado
+    public static void verificarCpf(String cpf) throws Exception {
+        for (Cliente referencia : clientes) {
+            if (referencia.getCpf().equals(cpf)) {
+                throw new Exception("CPF já cadastrado");
+            }
+        }
+
+    }
+    //Verificar  e-mail já castrado
+    public static void verificarEmail(String email) throws Exception{
+        for (Cliente referencia : clientes){
+            if (referencia.getEmail().equals(email)){
+                throw new Exception("Esse e-mail já está cadastrado");
+            }
+        }
+    }
 }
