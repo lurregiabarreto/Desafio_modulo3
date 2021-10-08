@@ -22,6 +22,23 @@ public class Sistema {
         System.out.println("Digite [9]  Sair do programa");
     }
 
+    public static Cliente cadastrarCliente() {
+        String nome = capturarDados("Digite o nome do cliente: ").nextLine();
+        String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
+        String email = capturarDados("Digite o email do cliente: ").nextLine();
+
+        Cliente cliente = ServicoCliente.cadastrarCliente(nome, cpf, email);
+        return cliente;
+    }
+    public static Vendedor cadastrarVendedor(){
+        String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
+        String cpf = capturarDados("Digite o cpf do vendendor: ").nextLine();
+        String email = capturarDados("Digite o email do vendendor: ").nextLine();
+
+
+        Vendedor vendedor = ServicoVendedor.cadastrarVendedor(nome, cpf, email);
+        return vendedor;
+    }
 
 }
 
