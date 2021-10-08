@@ -32,6 +32,16 @@ public class ServicoVenda {
         return vendasCliente;
     }
 
-
-
+    //buscar vendas efetuadas pelos vendedores
+    public static List<Venda> buscarVendaVendedor(String email){
+        List<Venda> vendasVendedor = new ArrayList<>();
+        for (Venda referencia : vendas){
+            if (referencia.getVendedor().getEmail().equals(email)){
+                vendasVendedor.add(referencia);
+            }
+        }
+        return vendasVendedor;
+    }
 }
+
+
