@@ -5,4 +5,9 @@ import java.util.List;
 
 public class ServicoVendedor {
     private static List<Vendedor> vendedores = new ArrayList<>();
+    public static Vendedor cadastrarVendedor(String nome, String cpf, String email){
+        Vendedor vendedor = new Vendedor(nome, cpf, email);
+        vendedores.add(vendedor);
+        return vendedor;
+    }
 }
