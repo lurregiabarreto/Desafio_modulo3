@@ -10,4 +10,14 @@ public class ServicoVendedor {
         vendedores.add(vendedor);
         return vendedor;
     }
+
+    //Verificar  e-mail já castrado
+    public static void verificarEmail(String email) throws Exception{
+        for (Vendedor referencia : vendedores){
+            if (referencia.getEmail().equals(email)){
+                throw new Exception("Esse e-mail já está cadastrado");
+            }
+        }
+    }
+
 }
