@@ -12,13 +12,26 @@ public class ServicoVenda {
         vendas.add(venda);
         return venda;
     }
-    //Exibir vendas
 
+    //Exibir vendas
     public static void ExibirVendas() {
         for (Venda refencia : vendas) {
             System.out.println(refencia);
         }
 
     }
+    //Lista para buscar compras efetuadas pelo cliente
+    public static List<Venda> buscarCompraCliente(String cpf) {
+        List<Venda> vendasCliente = new ArrayList<>();
+        for (Venda referencia : vendas) {
+            if (referencia.getCliente().getCpf().equals(cpf)) {
+                System.out.println(referencia);
+                vendasCliente.add(referencia);
+            }
+        }
+        return vendasCliente;
+    }
+
+
 
 }
