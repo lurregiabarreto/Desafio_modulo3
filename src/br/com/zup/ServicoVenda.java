@@ -14,7 +14,7 @@ public class ServicoVenda {
     }
 
     //Exibir vendas
-    public static void ExibirVendas() {
+    public static void exibirVendas() {
         for (Venda refencia : vendas) {
             System.out.println(refencia);
         }
