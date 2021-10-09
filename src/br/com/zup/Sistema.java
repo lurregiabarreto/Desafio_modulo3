@@ -1,5 +1,6 @@
 package br.com.zup;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -22,6 +23,7 @@ public class Sistema {
         System.out.println("Digite [9]  Sair do programa");
     }
 
+    //Cadastro cliente
     public static Cliente cadastrarCliente() {
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
         String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
@@ -30,6 +32,8 @@ public class Sistema {
         Cliente cliente = ServicoCliente.cadastrarCliente(nome, cpf, email);
         return cliente;
     }
+
+    //Cadastro Vendedor
     public static Vendedor cadastrarVendedor(){
         String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
         String cpf = capturarDados("Digite o cpf do vendendor: ").nextLine();
@@ -39,6 +43,26 @@ public class Sistema {
         Vendedor vendedor = ServicoVendedor.cadastrarVendedor(nome, cpf, email);
         return vendedor;
     }
+
+    //Cadastro vendas
+    public static Venda cadastrarVenda()throws Exception{
+        String nomeDoProduto = capturarDados("Digite o nome do produto:").nextLine();
+        double valor = capturarDados("Qual o valor do produto?").nextDouble();
+        String dataDeRegistro = capturarDados("Qual a data de registo?").nextLine();
+        String cpfCliente = capturarDados("Qual o cpf do cliente para essa venda?").nextLine();
+        String emailDoVendedor = capturarDados("Qual o e-mail do vendedor para essa venda?").nextLine();
+
+        Venda venda = ServicoVenda.cadastrarVenda(nomeDoProduto, valor, dataDeRegistro, emailDoVendedor, cpfCliente);
+        return venda;
+    }
+    //Metodo para verificar se existe o email cadastrado na lista de emails
+    public static List<Venda> pesquisarVendaVendedor() throws Exception{
+        String email = capturarDados("Digite o email que deseja buscar:").nextLine();
+
+        List<Venda> vendas = ServicoVenda.buscarVendaVendedor(email);
+        return vendas;
+    }
+
 
 }
 
