@@ -40,12 +40,20 @@ public class ServicoCliente {
         }
 
     }
+
     //Verificar  e-mail já castrado
-    public static void verificarEmail(String email) throws Exception{
-        for (Cliente referencia : clientes){
-            if (referencia.getEmail().equals(email)){
+    public static void verificarEmail(String email) throws Exception {
+        for (Cliente referencia : clientes) {
+            if (referencia.getEmail().equals(email)) {
                 throw new Exception("Esse e-mail já está cadastrado");
             }
+        }
+    }
+
+    //Exibir clientes
+    public static void exibirClientes() {
+        for (Cliente referencia : clientes) {
+            System.out.println(referencia);
         }
     }
 }
