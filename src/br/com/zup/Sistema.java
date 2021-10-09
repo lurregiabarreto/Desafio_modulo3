@@ -80,24 +80,27 @@ public class Sistema {
 
             if(escolhaMenu == 1){
                 cadastrarCliente();
+                System.out.println("Cliente cadastrado com SUCESSO !");
             }
             else if (escolhaMenu == 2){
                 cadastrarVendedor();
+                System.out.println("Vendedor cadastrado com SUCESSO !");
             }
             else if (escolhaMenu == 3){
                 cadastrarVenda();
+                System.out.println("Compra cadastrado com SUCESSO !");
             }
             else if (escolhaMenu == 4){
                 ServicoVenda.exibirVendas();
             }
             else if (escolhaMenu == 5){
-                ServicoCliente.buscarCliente();
+                ServicoCliente.exibirClientes();
             }
             else if (escolhaMenu == 6){
                 ServicoVendedor.mostrarListaVendedores();
             }
             else if (escolhaMenu == 7){
-                System.out.println(buscarVendaCliente());
+                System.out.println();
             }
             else if (escolhaMenu == 8){
                 System.out.println(buscarVendaVendedor());
@@ -112,8 +115,6 @@ public class Sistema {
         }
         return opcaoUsuario;
     }
-
-
 
 
 
