@@ -63,6 +63,14 @@ public class Sistema {
         return vendas;
     }
 
+    //Método para verificar se existe cpf cadastrado na lista
+    public static List<Venda> pesquisarVendaCliente() throws Exception{
+        String cpf = capturarDados("Digite o cpf que deseja pesquisar:").nextLine();
+
+        List<Venda> vendas = ServicoVenda.buscarCompraCliente(cpf);
+        return vendas;
+    }
+
 
 }
 
