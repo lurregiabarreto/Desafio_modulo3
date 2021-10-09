@@ -64,7 +64,7 @@ public class Sistema {
     }
 
     //Método para verificar se existe cpf cadastrado na lista
-    public static List<Venda> buscarVendaCliente() throws Exception{
+    public static List<Venda> buscarCompraCliente() throws Exception{
         String cpf = capturarDados("Digite o cpf que deseja buscar:").nextLine();
 
         List<Venda> vendas = ServicoVenda.buscarCompraCliente(cpf);
@@ -100,7 +100,7 @@ public class Sistema {
                 ServicoVendedor.mostrarListaVendedores();
             }
             else if (escolhaMenu == 7){
-                System.out.println();
+                System.out.println(buscarCompraCliente());
             }
             else if (escolhaMenu == 8){
                 System.out.println(buscarVendaVendedor());
