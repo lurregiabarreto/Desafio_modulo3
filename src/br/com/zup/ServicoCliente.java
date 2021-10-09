@@ -6,10 +6,14 @@ import java.util.List;
 public class ServicoCliente {
     private static List<Cliente> clientes = new ArrayList<>();
 
-    public static Cliente cadastrarCliente(String nome, String cpf, String email) {
+    public static Cliente cadastrarCliente(String nome, String cpf, String email) throws Exception {
+        validarEmail(email);
+        verificarCpf(cpf);
+        verificarEmail(email);
         Cliente cliente = new Cliente(nome, cpf, email);
         clientes.add(cliente);
         return cliente;
+
     }
 
     //busca do cliente
