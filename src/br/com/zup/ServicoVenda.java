@@ -12,7 +12,7 @@ public class ServicoVenda {
         ServicoCliente.validarEmail(email);
         Vendedor vendedor = ServicoVendedor.buscarVendedor(email);
 
-        Venda venda = new Venda();
+        Venda venda = new Venda(nomeDoProduto,valor, dataDeRegistro, vendedor, cliente );
         vendas.add(venda);
         return venda;
     }
