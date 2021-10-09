@@ -56,7 +56,7 @@ public class Sistema {
         return venda;
     }
     //Metodo para verificar se existe o email cadastrado na lista de emails
-    public static List<Venda> pesquisarVendaVendedor() throws Exception{
+    public static List<Venda> buscarVendaVendedor() throws Exception{
         String email = capturarDados("Digite o email que deseja buscar:").nextLine();
 
         List<Venda> vendas = ServicoVenda.buscarVendaVendedor(email);
@@ -64,12 +64,57 @@ public class Sistema {
     }
 
     //Método para verificar se existe cpf cadastrado na lista
-    public static List<Venda> pesquisarVendaCliente() throws Exception{
-        String cpf = capturarDados("Digite o cpf que deseja pesquisar:").nextLine();
+    public static List<Venda> buscarVendaCliente() throws Exception{
+        String cpf = capturarDados("Digite o cpf que deseja buscar:").nextLine();
 
         List<Venda> vendas = ServicoVenda.buscarCompraCliente(cpf);
         return vendas;
     }
+    //Metodo para executar todos os metodos do sistema para executar na main
+    public static boolean executar()throws Exception{
+        boolean opcaoUsuario = true;
+
+        while (opcaoUsuario){
+            menu();
+            int escolhaMenu = capturarDados("Digite sua escolha:").nextInt();
+
+            if(escolhaMenu == 1){
+                cadastrarCliente();
+            }
+            else if (escolhaMenu == 2){
+                cadastrarVendedor();
+            }
+            else if (escolhaMenu == 3){
+                cadastrarVenda();
+            }
+            else if (escolhaMenu == 4){
+                ServicoVenda.exibirVendas();
+            }
+            else if (escolhaMenu == 5){
+                ServicoCliente.buscarCliente();
+            }
+            else if (escolhaMenu == 6){
+                ServicoVendedor.mostrarListaVendedores();
+            }
+            else if (escolhaMenu == 7){
+                System.out.println(buscarVendaCliente());
+            }
+            else if (escolhaMenu == 8){
+                System.out.println(buscarVendaVendedor());
+            }
+            else if (escolhaMenu == 9){
+                System.out.println("Programa finalizado");
+                opcaoUsuario = false;
+            }
+            else {
+                System.out.println("Opção inválida ");
+            }
+        }
+        return opcaoUsuario;
+    }
+
+
+
 
 
 }
