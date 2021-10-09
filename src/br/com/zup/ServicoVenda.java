@@ -7,7 +7,11 @@ public class ServicoVenda {
     private static List<Venda> vendas = new ArrayList<>();
 
     //Cadastro vendas
-    public static Venda cadastrarVenda(String nomeDoProduto, double valor, String dataDeRegistro, String email, String cpf) {
+    public static Venda cadastrarVenda(String nomeDoProduto, double valor, String dataDeRegistro, String email, String cpf) throws Exception{
+        Cliente cliente = ServicoCliente.buscarCliente(cpf);
+        ServicoCliente.validarEmail(email);
+        Vendedor vendedor = ServicoVendedor.buscarVendedor(email);
+
         Venda venda = new Venda();
         vendas.add(venda);
         return venda;
