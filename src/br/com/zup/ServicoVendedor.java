@@ -22,7 +22,7 @@ public class ServicoVendedor {
     }
 
 
-   //buscar vendedores pelo email
+    //buscar vendedores pelo email
     public static Vendedor buscarVendedor(String email) throws Exception {
         for (Vendedor referencia : vendedores) {
             if (referencia.getEmail().equals(email)) {
@@ -32,13 +32,22 @@ public class ServicoVendedor {
         throw new Exception("Nenhum email cadastrado");
 
     }
+
     //Exibir de vendedores para usuario
-    public static void mostrarListaVendedores(){
-        for(Vendedor referencia : vendedores){
+    public static void mostrarListaVendedores() {
+        for (Vendedor referencia : vendedores) {
             System.out.println(referencia);
         }
     }
 
+    //Verificar se cpf ja tem cadastrado na lista de vendedores
+    public static void verificarCpf(String cpf) throws Exception {
+        for (Vendedor referencia : vendedores) {
+            if (referencia.getCpf().equals(cpf)) {
+                throw new Exception("CPF já cadastrado em sistema ");
+            }
+        }
 
+
+    }
 }
-
