@@ -8,19 +8,15 @@ public class Venda {
     private String dataDeRegistro;
 
 
-    public Venda() {
-    }
-
-    public Venda(Vendedor vendedor, Cliente cliente, String nomeDoProduto, double valorSerPago, String dataDeRegistro) {
-
+    public Venda(String nomeDoProduto, double valorSerPago, String dataDeRegistro, Vendedor vendedor, Cliente cliente) {
         this.vendedor = vendedor;
         this.cliente = cliente;
         this.nomeDoProduto = nomeDoProduto;
         this.valorSerPago = valorSerPago;
         this.dataDeRegistro = dataDeRegistro;
-
-
     }
+
+
 
     public Vendedor getVendedor() {
         return vendedor;
@@ -65,11 +61,11 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append("Nome do Produto : "  + nomeDoProduto);
-        retorno.append("Valor do Produto :  " + valorSerPago);
-        retorno.append("Data de Registro :  " + dataDeRegistro);
-        retorno.append("Nome do vendedor :  " + vendedor);
-        retorno.append("Nome do cliente : " + cliente);
+        retorno.append("Nome do Produto : " + nomeDoProduto);
+        retorno.append(" \n Valor do Produto :  " + valorSerPago);
+        retorno.append(" \n Data de Registro :  " + dataDeRegistro);
+        retorno.append(" \n Nome do vendedor :  " + vendedor);
+        retorno.append(" \n Nome do cliente : " + cliente);
         return retorno.toString();
     }
 }
