@@ -27,11 +27,10 @@ public class ServicoVenda {
     //Lista para buscar compras efetuadas pelo cliente
     public static List<Venda> buscarCompraCliente(String cpf) {
         List<Venda> comprasCliente = new ArrayList<>();
-        for (Venda referencia : vendas) {
+        for (Venda venda : vendas) {
 
-            if (referencia.getCliente().getCpf().equals(cpf)) {
-                System.out.println(referencia);
-                comprasCliente.add(referencia);
+            if (venda.getCliente().getCpf().equals(cpf)) {
+                comprasCliente.add(venda);
             }
         }
         return comprasCliente;
