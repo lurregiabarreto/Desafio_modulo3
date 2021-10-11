@@ -48,7 +48,7 @@ public class Sistema {
     public static Venda cadastrarVenda()throws Exception{
         String nomeDoProduto = capturarDados("Digite o nome do produto:").nextLine();
         double valor = capturarDados("Qual o valor do produto?").nextDouble();
-        String dataDeRegistro = capturarDados("Qual a data de registo?").nextLine();
+        String dataDeRegistro = capturarDados("Qual a data de registo? Ex : dd/mm/aa").nextLine();
         String cpfCliente = capturarDados("Qual o cpf do cliente para essa venda?").nextLine();
         String emailDoVendedor = capturarDados("Qual o e-mail do vendedor para essa venda?").nextLine();
 

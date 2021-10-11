@@ -39,7 +39,7 @@ public class ServicoCliente {
     public static void verificarCpf(String cpf) throws Exception {
         for (Cliente referencia : clientes) {
             if (referencia.getCpf().equals(cpf)) {
-                throw new Exception("CPF já cadastrado");
+                throw new Exception("CPF já cadastrado, por favor digite novamente !");
             }
         }
 
